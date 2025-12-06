@@ -8,23 +8,19 @@ const buttonText = playPauseBtn.querySelector(".button-text");
 let isPlaying = false;
 let currentSpeed = 1.0;
 
-// Load saved state
-chrome.storage.local.get(["isPlaying", "speed"], (result) => {
+// Load saved speed preference
+chrome.storage.local.get(["speed"], (result) => {
   if (result.speed !== undefined) {
     currentSpeed = result.speed;
     speedSlider.value = currentSpeed;
     updateSpeedDisplay(currentSpeed);
   }
 
-  if (result.isPlaying !== undefined) {
-    isPlaying = result.isPlaying;
-    updateButtonState(isPlaying);
-  }
-
-  // Check actual state from background script
+  // Get actual state from background script (source of truth)
   chrome.runtime.sendMessage({ type: "GET_STATE" }, (response) => {
     if (response) {
       isPlaying = response.isPlaying;
+      // Use speed from background if available, otherwise use stored preference
       if (response.speed !== undefined) {
         currentSpeed = response.speed;
         speedSlider.value = currentSpeed;
@@ -77,10 +73,7 @@ playPauseBtn.addEventListener("click", () => {
   isPlaying = !isPlaying;
   updateButtonState(isPlaying);
 
-  // Save state
-  chrome.storage.local.set({ isPlaying: isPlaying });
-
-  // Send message to background script
+  // Send message to background script (source of truth)
   chrome.runtime.sendMessage({
     type: "TOGGLE_SCROLL",
     speed: currentSpeed,
@@ -99,6 +92,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === "STATE_CHANGED") {
     isPlaying = message.isPlaying;
     updateButtonState(isPlaying);
-    chrome.storage.local.set({ isPlaying: isPlaying });
   }
 });
