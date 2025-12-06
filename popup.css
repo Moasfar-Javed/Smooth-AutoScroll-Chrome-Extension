@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 280px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1e1e1e;
+    color: #e0e0e0;
+  }
+}
+
+.container {
+  padding: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .title {
+    color: #e0e0e0;
+  }
+}
+
+.control-group {
+  margin-bottom: 24px;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #4a4a4a;
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  .label {
+    color: #b0b0b0;
+  }
+}
+
+.speed-value {
+  color: #A868B3;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .speed-value {
+    color: #9971A0;
+  }
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-bottom: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .slider {
+    background: #3a3a3a;
+  }
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #A868B3;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(168, 104, 179, 0.3);
+  transition: background 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #9659A0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .slider::-webkit-slider-thumb {
+    background: #9971A0;
+    box-shadow: 0 2px 4px rgba(153, 113, 160, 0.4);
+  }
+
+  .slider::-webkit-slider-thumb:hover {
+    background: #A882B0;
+  }
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #A868B3;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(168, 104, 179, 0.3);
+  transition: background 0.2s;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #9659A0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .slider::-moz-range-thumb {
+    background: #9971A0;
+    box-shadow: 0 2px 4px rgba(153, 113, 160, 0.4);
+  }
+
+  .slider::-moz-range-thumb:hover {
+    background: #A882B0;
+  }
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .slider-labels {
+    color: #707070;
+  }
+}
+
+.play-button {
+  width: 100%;
+  padding: 12px 24px;
+  background: #A868B3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 4px rgba(168, 104, 179, 0.3);
+}
+
+.play-button:hover {
+  background: #9659A0;
+}
+
+.play-button:active {
+  transform: scale(0.98);
+}
+
+.play-button.playing {
+  background: #dc3545;
+}
+
+.play-button.playing:hover {
+  background: #c82333;
+}
+
+@media (prefers-color-scheme: dark) {
+  .play-button {
+    background: #9971A0;
+    box-shadow: 0 2px 4px rgba(153, 113, 160, 0.3);
+  }
+
+  .play-button:hover {
+    background: #A882B0;
+  }
+
+  .play-button.playing {
+    background: #ff4d4d;
+  }
+
+  .play-button.playing:hover {
+    background: #ff6666;
+  }
+}
+
+.button-icon {
+  font-size: 14px;
+}
+
+.button-text {
+  font-size: 16px;
+}
+
+.link-container {
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .link-container {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.text-link {
+  font-size: 11px;
+  color: #888;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.link-separator {
+  font-size: 11px;
+  color: #888;
+  margin: 0 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-link {
+    color: #707070;
+  }
+
+  .link-separator {
+    color: #707070;
+  }
+}
+

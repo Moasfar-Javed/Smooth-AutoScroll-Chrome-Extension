@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smooth AutoScroll</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Smooth AutoScroll</h1>
+
+      <div class="control-group">
+        <label for="speed-slider" class="label">
+          <span>Speed</span>
+          <span id="speed-value" class="speed-value">1.0x</span>
+        </label>
+        <input
+          type="range"
+          id="speed-slider"
+          class="slider"
+          min="0.5"
+          max="3.0"
+          step="0.1"
+          value="1.0"
+        />
+        <div class="slider-labels">
+          <span>Slow</span>
+          <span>Fast</span>
+        </div>
+      </div>
+
+      <button id="play-pause-btn" class="play-button">
+        <span class="button-icon">▶</span>
+        <span class="button-text">Start</span>
+      </button>
+
+      <div class="link-container">
+        <a
+          href="https://www.linkedin.com/in/moasfar-javed"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-link"
+        >
+          Dev
+        </a>
+        <span class="link-separator"> | </span>
+        <a
+          href="https://github.com/Moasfar-Javed/Smooth-AutoScroll-Chrome-Extension"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-link"
+        >
+          Repo
+        </a>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

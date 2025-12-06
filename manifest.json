@@ -1,9 +1,10 @@
 {
   "manifest_version": 3,
   "name": "Smooth AutoScroll",
-  "version": "1.0",
-  "description": "Click the icon to start/stop smooth autoscroll on any page.",
+  "version": "2.0",
+  "description": "Smooth autoscroll on any page with customizable speed",
   "action": {
+    "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
@@ -14,7 +15,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["scripting", "activeTab"],
+  "permissions": ["scripting", "activeTab", "storage"],
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
